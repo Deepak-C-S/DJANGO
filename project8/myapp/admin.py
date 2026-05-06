@@ -4,6 +4,8 @@ from myapp.models import *
 
 # Register your models here.
 
-admin.site.register(Student)
+class StudentAdmin(admin.ModelAdmin):
+    list_display=['name','age','dob','email','usn','dept','college']
 
+admin.site.register(Student,StudentAdmin)
 
