@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import *
-# Create your views here.
+
 def formview(request):
     f=studentForm()
     if request.method=="POST":

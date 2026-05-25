@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rama</title>
+   
+    
+</head>
+<body>
+    <CENTER>
+        <h1>{{ name }} information</h1>
+    </CENTER>
+    <div>
+        <h2>Name: {{ name }}</h2>
+        <h2><a href="https://en.wikipedia.org/wiki/Rama">Learn more</a></h2>
+        <img src="{% static 'image/rama.jpg' %}" >
+    </div>
+
+    <div>
+        <h2>Place: {{ place }}</h2>
+        <h2><a href="https://en.wikipedia.org/wiki/Ayodhya">Learn more</a></h2>
+        <img src="{% static 'image/ayodhya.jpg' %}" >
+    </div>
+</body>
+</html>
