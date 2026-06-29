@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}Staff Dashboard{% endblock %}
+
+{% block header_actions %} <a class="button ghost" href="{% url 'apply_leave' %}">Apply Leave</a> <a class="button secondary" href="{% url 'my_leaves' %}">My Requests</a> <a class="button" href="{% url 'logout' %}">Logout</a>
+{% endblock %}
+
+{% block content %}
+
+<section class="hero-panel">
+    <div class="hero-grid">
+
+```
+    <div class="hero-copy">
+        <div class="eyebrow">Employee Dashboard</div>
+
+        <h2 class="hero-title">
+            Manage Your Leave Requests
+        </h2>
+
+        <p class="page-lead">
+            Submit leave applications, monitor approval status,
+            and review your leave history through a centralized
+            employee portal.
+        </p>
+
+        <div class="cta-row" style="margin-top: 22px;">
+            <a class="button" href="{% url 'apply_leave' %}">
+                Apply Leave
+            </a>
+
+            <a class="button secondary" href="{% url 'my_leaves' %}">
+                View Leave Requests
+            </a>
+        </div>
+    </div>
+
+    <div class="card stack">
+
+        <div>
+            <p class="subtitle">Employee Information</p>
+            <h3 class="section-title" style="font-size: 1.4rem;">
+                Welcome, {{ request.user.username }}
+            </h3>
+        </div>
+
+        <div class="stat-grid">
+
+            <div class="stat-card">
+                <p class="stat-label">Pending Requests</p>
+                <p class="stat-value">{{ pending_count }}</p>
+            </div>
+
+            <div class="stat-card">
+                <p class="stat-label">Approved Requests</p>
+                <p class="stat-value">{{ approved_count }}</p>
+            </div>
+
+            <div class="stat-card">
+                <p class="stat-label">Rejected Requests</p>
+                <p class="stat-value">{{ rejected_count }}</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+{% endblock %}

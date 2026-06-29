@@ -1,0 +1,37 @@
+>>> from myapp.models import Student
+>>> Student.objects.all()
+
+
+>>> Student.objects.get(id=1)
+
+>>> Student.objects.filter(marks__gt =40)    gt lt gte lte 
+
+>>> Student.objects.filter(marks=79.0)
+
+>>> Student.objects.filter(marks__gte =80.0)
+
+>>> Student.objects.filter(name__startswith ='d')
+
+>>> Student.objects.filter(name__endswith ='s')
+
+
+>>> Student.objects.filter(id__in=[1,2,3])
+
+>>> Student.objects.filter(marks__range=(80,85))
+
+
+------------------------------------------------------------
+>>> from django.db.models import *
+
+>>> Student.objects.all().aggregate(Min('marks'))
+>>> Student.objects.all().aggregate(Max('marks'))
+>>> Student.objects.all().aggregate(Avg('marks'))
+>>> Student.objects.all().aggregate(Count('marks'))
+>>> Student.objects.all().aggregate(Sum('marks'))
+
+-------------------------------------------------------------
+
+>>> Student.objects.all().order_by('name')
+
+>>> Student.objects.all().order_by('-name')
+

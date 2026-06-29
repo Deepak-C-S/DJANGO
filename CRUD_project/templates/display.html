@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        :root{
+            --bg:#f6f8fb;
+            --card:#ffffff;
+            --muted:#6b7280;
+            --accent:#2563eb;
+            --danger:#ef4444;
+            --radius:10px;
+        }
+        *{box-sizing:border-box}
+        body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:var(--bg);color:#111827}
+        .page-wrapper{max-width:1100px;margin:36px auto;padding:20px}
+        .panel-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+        .panel-header h1{margin:0;font-size:1.4rem}
+        .subtitle{margin:4px 0 0;color:var(--muted);font-size:0.9rem}
+        .toolbar{display:flex;gap:12px;align-items:center}
+        .search{padding:10px 12px;border-radius:999px;border:1px solid #e6e9ef;background:#fff;min-width:200px}
+        .table-wrap{background:var(--card);border-radius:var(--radius);box-shadow:0 6px 18px rgba(15,23,42,0.06);overflow:hidden}
+        .data-table{width:100%;border-collapse:collapse;background:transparent}
+        .data-table thead{background:#f3f6fb}
+        .data-table th,.data-table td{padding:12px 16px;text-align:left;font-size:0.95rem;border-bottom:1px solid #f1f5f9}
+        .data-table th{color:var(--muted);font-weight:600}
+        .cell-name{font-weight:600}
+        .actions{white-space:nowrap}
+        .btn{display:inline-block;padding:8px 12px;border-radius:8px;text-decoration:none;font-size:0.9rem;border:1px solid transparent}
+        .btn-primary{background:var(--accent);color:#fff}
+        .btn-ghost{background:transparent;border:1px solid #e6e9ef;color:var(--accent)}
+        .btn-danger{background:var(--danger);color:#fff}
+
+        @media (max-width:700px){
+            .panel-header{flex-direction:column;align-items:flex-start;gap:8px}
+            .toolbar{width:100%;justify-content:space-between}
+            .search{flex:1;min-width:0}
+            .data-table thead{display:none}
+            .data-table, .data-table tbody, .data-table tr, .data-table td{display:block;width:100%}
+            .data-table tr{margin:12px;padding:12px;border-radius:8px;border:1px solid #eef2f7;background:linear-gradient(180deg,#fff,#fbfdff)}
+            .data-table td{padding:8px 12px;border:none}
+            .data-table td:before{content:attr(data-label);font-weight:600;display:block;color:var(--muted);font-size:0.85rem;margin-bottom:6px}
+            .actions{display:flex;gap:8px}
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="form-panel display-panel">
+            <header class="panel-header">
+                <div>
+                    <h1>Employees</h1>
+                    <p class="subtitle">Manage your organization's employee records</p>
+                </div>
+                <div class="toolbar">
+                    <a class="btn btn-primary insert-link" href="/insert/">+ Insert</a>
+                </div>
+            </header>
+
+            <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Email</th>
+                        <th>Place</th>
+                        <th>Job</th>
+                        <th>Salary</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for i in emp %}
+                    <tr>
+                        <td class="cell-name" data-label="Name">{{ i.name }}</td>
+                        <td data-label="Age">{{ i.age }}</td>
+                        <td data-label="Email">{{ i.email }}</td>
+                        <td data-label="Place">{{ i.place }}</td>
+                        <td data-label="Job">{{ i.job }}</td>
+                        <td data-label="Salary">{{ i.salary }}</td>
+                        <td class="actions" data-label="Actions">
+                            <a class="btn btn-ghost" href="update/{{i.id}}/">Edit</a>
+                            <a class="btn btn-danger" href="delete/{{i.id}}/" onclick="return confirmDelete(event)">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

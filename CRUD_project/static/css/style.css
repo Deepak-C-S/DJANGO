@@ -1,0 +1,79 @@
+body {
+  background: #fff5f8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.table thead th {
+  background: linear-gradient(90deg,#ffd1e8,#ffeef8);
+}
+.card { border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+.btn-brand { background: #ff7bb0; color: white; border: none; }
+.form-control:focus { box-shadow: 0 0 0 0.2rem rgba(255,123,176,0.25); }
+
+/* Simple, friendly site header and layout (not professional) */
+.site-header { background: transparent; padding: 14px 0; }
+.header-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1000px; margin: 0 auto; padding: 0 12px; }
+.brand { font-weight: 700; color: #b3005a; text-decoration: none; font-size: 1.25rem; }
+.nav-link { margin-left: 12px; color: #b3005a; text-decoration: underline; font-size: 0.95rem; }
+
+.container { max-width: 1000px; margin: 0 auto; padding: 12px; }
+.main-content { margin-top: 8px; }
+
+/* Simple table styles */
+/* Simple table styles (clean, friendly) */
+table { border-collapse: collapse; width: 100%; background: white; border: 1px solid #e6d6df; }
+thead th { border-bottom: 2px solid #ead6e0; padding: 10px 12px; text-align: left; background: #fff5f8; font-weight: 700; }
+tbody td { padding: 10px 12px; vertical-align: middle; }
+tbody tr { border-bottom: 1px solid #f0e6ec; }
+tbody tr:nth-child(even) { background: #fffafc; }
+
+/* Card wrapper for nicer spacing */
+.card { background: #fff; padding: 14px; border-radius: 8px; border: 1px solid #efe0e8; }
+
+/* Actions */
+.actions a { margin-right: 8px; color: #6a0060; text-decoration: underline; }
+.actions input[type="submit"] { padding: 6px 10px; border-radius: 4px; border: 1px solid #c9b0bf; background: #fff; cursor: pointer; }
+
+/* Small responsive tweaks */
+@media (max-width: 700px) {
+  thead th, tbody td { padding: 8px 6px; font-size: 14px; }
+}
+
+/* More tailored simple table format */
+.table-simple { border: 1px solid #e0cfd8; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.03); }
+.table-simple thead th { background: linear-gradient(180deg,#fff7fb,#fff2f6); color: #4a002a; font-size: 15px; padding: 12px 14px; }
+.table-simple tbody td { padding: 10px 14px; color: #1f1f1f; }
+.table-simple tbody tr:nth-child(even) { background: #fffafc; }
+.table-simple tbody tr:hover { background: #fff3f7; }
+.table-simple thead th:first-child { padding-left: 18px; }
+.table-simple tbody td:first-child { padding-left: 18px; }
+
+.action-btn { display: inline-block; padding: 6px 10px; margin-left: 6px; border-radius: 4px; border: 1px solid #d1b8c6; background: #fff; color: #480033; text-decoration: none; font-size: 0.95rem; }
+.action-btn.delete { border-color: #c9a3b8; }
+
+/* Small subtle caption style */
+.muted { color: #6b4858; font-size: 0.95rem; }
+
+/* Popper simple UI — friendly, slightly playful */
+.pop-card { background: linear-gradient(180deg,#fff,#fff8fb); border-radius: 12px; padding: 18px; box-shadow: 0 8px 20px rgba(107,52,83,0.08); border: 1px solid rgba(180,120,140,0.12); }
+.pop-title { font-family: 'Georgia', serif; color: #3b0028; margin: 0 0 10px 0; }
+.pop-sub { color: #6b4858; margin: 0 0 14px 0; }
+
+/* Form styles */
+.form-row { margin-bottom: 10px; }
+label { display: block; font-weight: 600; color: #4a002a; margin-bottom: 6px; }
+input[type="text"], input[type="number"], input[type="email"], select, textarea { width: 100%; padding: 8px 10px; border: 1px solid #e6d6df; border-radius: 8px; background: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,0.6); }
+
+.btn-primary { display: inline-block; padding: 8px 14px; background: linear-gradient(180deg,#ff9ac4,#ff6fa8); color: white; border-radius: 8px; border: none; cursor: pointer; box-shadow: 0 6px 12px rgba(255,110,160,0.16); }
+.btn-ghost { background: transparent; color: #6b4858; border: none; text-decoration: underline; margin-left: 10px; }
+
+.form-errors { color: #a0003a; font-size: 0.95rem; margin-bottom: 8px; }
+
+.center { text-align: center; }
+
+/* Small form/button tweaks */
+input[type="submit"] { padding: 4px 8px; }
+
+/* Muted link color for minimal actions */
+a { color: #6a0060; }

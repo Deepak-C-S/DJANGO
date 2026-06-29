@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --bg:#f5f7fb;
+            --card:#ffffff;
+            --muted:#6b7280;
+            --accent:#0b74ff;
+            --success:#10b981;
+            --danger:#ef4444;
+            --radius:12px;
+            --gap:14px;
+        }
+        *{box-sizing:border-box}
+        body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:var(--bg);color:#0f172a}
+        .page-wrapper{max-width:800px;margin:40px auto;padding:20px}
+        .form-panel{background:var(--card);padding:22px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(15,23,42,0.06)}
+        .form-panel h1{margin:0 0 8px;font-size:1.25rem}
+        form p{display:flex;flex-direction:column;gap:6px;margin:12px 0}
+        form label{font-weight:600;color:var(--muted);font-size:0.92rem}
+        input[type="text"], input[type="email"], input[type="number"], input[type="search"], textarea, select{
+            padding:10px 12px;border:1px solid #e6e9ef;border-radius:8px;font-size:0.95rem;background:#fff;color:#0f172a;
+        }
+        textarea{min-height:100px;resize:vertical}
+        .form-errors{color:var(--danger);font-size:0.9rem;margin-top:6px}
+        .button-row{display:flex;gap:10px;justify-content:flex-end;margin-top:18px}
+        .btn{padding:10px 14px;border-radius:10px;border:1px solid transparent;text-decoration:none;cursor:pointer;font-weight:600}
+        .btn-primary{background:var(--accent);color:#fff}
+        .btn-ghost{background:transparent;border:1px solid #e6e9ef;color:var(--accent)}
+
+        @media (max-width:520px){
+            .page-wrapper{margin:18px;padding:14px}
+            .button-row{flex-direction:column;align-items:stretch}
+            .btn{width:100%}
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="form-panel">
+            <h1>Insert Employee</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="form-errors">{{ form.errors }}</div>
+                <div class="button-row">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

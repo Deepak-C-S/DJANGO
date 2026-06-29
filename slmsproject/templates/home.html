@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}SLMS Home{% endblock %}
+
+{% block header_actions %}
+    <a class="button ghost" href="{% url 'login' %}">Login</a>
+    <a class="button" href="{% url 'register' %}">Register</a>
+{% endblock %}
+
+{% block content %}
+<section class="hero-panel">
+    <div class="hero-grid">
+        <div class="hero-copy">
+            <div class="eyebrow">Staff Leave Management System</div>
+
+            <h2 class="hero-title">
+                Streamline Leave Requests and Approvals
+            </h2>
+
+            <p class="page-lead">
+                Manage employee leave applications, approval workflows,
+                and leave records through a centralized platform designed
+                for efficiency, transparency, and accountability.
+            </p>
+
+            <div class="cta-row" style="margin-top:22px;">
+                <a class="button" href="{% url 'login' %}">
+                    Login
+                </a>
+
+                <a class="button secondary" href="{% url 'register' %}">
+                    Register
+                </a>
+            </div>
+        </div>
+
+        <div class="card stack">
+            <div>
+                <p class="subtitle">System Features</p>
+
+                <h3 class="section-title" style="font-size:1.5rem;">
+                    Everything needed to manage employee leave
+                </h3>
+            </div>
+
+            <p class="support-text">
+                Submit leave requests, track approval status,
+                review employee applications, manage staff accounts,
+                and maintain accurate leave records from a single dashboard.
+            </p>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <p class="stat-label">Applications</p>
+                    <p class="stat-value">Online</p>
+                </div>
+
+                <div class="stat-card">
+                    <p class="stat-label">Approvals</p>
+                    <p class="stat-value">Digital</p>
+                </div>
+
+                <div class="stat-card">
+                    <p class="stat-label">Records</p>
+                    <p class="stat-value">Centralized</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

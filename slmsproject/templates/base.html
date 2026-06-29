@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Staff Leave Management System{% endblock %}</title>
+
+
+<link rel="stylesheet" href="{% static 'css/site.css' %}">
+{% block head %}{% endblock %}
+
+
+</head>
+<body>
+
+<div class="page-shell">
+
+
+<header class="topbar">
+
+    <div class="brand">
+        <div class="brand-mark">SL</div>
+
+        <div class="brand-copy">
+            <h1>Staff Leave Management System</h1>
+            <p>Employee Leave Administration Portal</p>
+        </div>
+    </div>
+
+    <div class="header-actions">
+        {% block header_actions %}{% endblock %}
+    </div>
+
+</header>
+
+{% if messages %}
+<section class="message-stack">
+    {% for message in messages %}
+        <p class="message {{ message.tags|default:'info' }}">
+            {{ message }}
+        </p>
+    {% endfor %}
+</section>
+{% endif %}
+
+<main class="main-content">
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer class="page-footer">
+    <div class="footer-content">
+        <p>
+            &copy; 2026 Dhee Coding Lab (DCL). All Rights Reserved.
+        </p>
+
+        <p>
+            Staff Leave Management System v1.0
+        </p>
+    </div>
+</footer>
+
+
+</div>
+
+</body>
+</html>

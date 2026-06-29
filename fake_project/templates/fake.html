@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body background="https://cdn.pixabay.com/photo/2016/11/29/03/53/background-1869237_960_720.jpg">
+    <center>
+        <br><br><br><br><br><br>
+        <h1 style="color:rgb(76, 0, 255);  ">Fake Employee Data</h1>
+        <table border="1" STYLE="width:75%; text-align:center; BACKGROUND-COLOR:rgb(217, 203, 203); FONT-FAMILY:ARIAL; FONT-SIZE:20PX;">
+            <tr style="background-color:rgb(124, 205, 230); color:rgb(0, 0, 0);">
+                <th>Name</th>
+                <th>DOB</th>
+                <th>Job</th>
+                <th>Place</th>
+                <th>Email</th>
+            </tr>
+            {% for emp in employees %}
+            <tr>
+                <td>{{ emp.name }}</td>
+                <td>{{ emp.dob }}</td>
+                <td>{{ emp.job }}</td>
+                <td>{{ emp.place }}</td>
+                <td>{{ emp.email }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+    <br><br><br><br><br><br>
+</body>
+</html>
